@@ -44,12 +44,13 @@ function processPKLData(key, data) {
 	plotChart(key, chart, [ dataset ]);
 }
 
+var spreadSheetKey = '1U8oVJ0iDZwPmmbE_wlBq4da7iJ0fyumewOwCW9cvxWY';
 
-getData('1U8oVJ0iDZwPmmbE_wlBq4da7iJ0fyumewOwCW9cvxWY', function(result) {
+getSheetData(spreadSheetKey, 1, function(result) {
 	sections = result.data;
 	sections = convertRowsToObj(sections);
 
-	getData('1aXy8j8vPMS0e--U9d8XtPyKdPcA-XG8ao9EHKywSMwQ', function(result) {
+	getSheetData(spreadSheetKey, 2, function(result) {
 		charts = result.data;
 		charts = convertRowsToObj(charts);
 		onDataLoaded();
